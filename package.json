@@ -1,6 +1,6 @@
 {
-  "name": "mongodb-querystring",
-  "version": 1.0.0,
+  "name": "mongodb-query-string",
+  "version": "1.0.0",
   "description": "Parse and pass URL queries to MongoDB query",
   "main": "index.js",
   "files": [
@@ -32,15 +32,12 @@
     "mongo",
     "mongodb"
   ],
-  "author": [
-    "Hans Kristian Flaatten <hans@starefossen.com>",
-    "Leandro Silva <leandro@leandrosilva.info>"
-  ],
+  "author": "Leandro Silva <leandro@leandrosilva.info>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Turistforeningen/node-mongo-querystring/issues"
+    "url": "https://github.com/Lansoweb/node-mongo-querystring/issues"
   },
-  "homepage": "https://github.com/Turistforeningen/node-mongo-querystring#readme",
+  "homepage": "https://github.com/Lansoweb/node-mongo-querystring#readme",
   "devDependencies": {
     "JSONStream": "^1.1.1",
     "codacy-coverage": "^2.0.0",
