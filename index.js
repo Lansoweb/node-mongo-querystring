@@ -110,17 +110,14 @@ function parseDate(value) {
     date = parseInt(date, 10);
   }
 
-  date = new Date(date);
-
-  return date;
+  return new Date(date);
 }
 
 module.exports.prototype.customAfter = field => (query, value) => {
   const date = parseDate(value);
-
   if (date.toString() !== 'Invalid Date') {
     query[field] = {
-      $gte: date.toISOString(),
+      $gte: date
     };
   }
 };
@@ -130,7 +127,7 @@ module.exports.prototype.customBefore = field => (query, value) => {
 
   if (date.toString() !== 'Invalid Date') {
     query[field] = {
-      $lt: date.toISOString(),
+      $lt: date,
     };
   }
 };
@@ -145,8 +142,8 @@ module.exports.prototype.customBetween = field => (query, value) => {
 
   if (after.toString() !== 'Invalid Date' && before.toString() !== 'Invalid Date') {
     query[field] = {
-      $gte: after.toISOString(),
-      $lt: before.toISOString(),
+      $gte: after,
+      $lt: before
     };
   }
 };

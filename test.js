@@ -119,7 +119,7 @@ describe('customAfter()', () => {
     mqs.customAfter('endret')(query, '2014-09-22T11:50:37.843Z');
     assert.deepEqual(query, {
       endret: {
-        $gte: '2014-09-22T11:50:37.843Z',
+        $gte: new Date('2014-09-22T11:50:37.843Z'),
       },
     });
   });
@@ -128,7 +128,7 @@ describe('customAfter()', () => {
     mqs.customAfter('endret')(query, '1411386637843');
     assert.deepEqual(query, {
       endret: {
-        $gte: '2014-09-22T11:50:37.843Z',
+        $gte: new Date('2014-09-22T11:50:37.843Z'),
       },
     });
   });
@@ -137,7 +137,7 @@ describe('customAfter()', () => {
     mqs.customAfter('endret')(query, '1411386637');
     assert.deepEqual(query, {
       endret: {
-        $gte: '2014-09-22T11:50:37.000Z',
+        $gte: new Date('2014-09-22T11:50:37.000Z'),
       },
     });
   });
@@ -155,7 +155,7 @@ describe('customBefore()', () => {
     mqs.customBefore('endret')(query, '2014-09-22T11:50:37.843Z');
     assert.deepEqual(query, {
       endret: {
-        $lt: '2014-09-22T11:50:37.843Z',
+        $lt: new Date('2014-09-22T11:50:37.843Z'),
       },
     });
   });
@@ -164,7 +164,7 @@ describe('customBefore()', () => {
     mqs.customBefore('endret')(query, '1411386637843');
     assert.deepEqual(query, {
       endret: {
-        $lt: '2014-09-22T11:50:37.843Z',
+        $lt: new Date('2014-09-22T11:50:37.843Z'),
       },
     });
   });
@@ -173,7 +173,7 @@ describe('customBefore()', () => {
     mqs.customBefore('endret')(query, '1411386637');
     assert.deepEqual(query, {
       endret: {
-        $lt: '2014-09-22T11:50:37.000Z',
+        $lt: new Date('2014-09-22T11:50:37.000Z'),
       },
     });
   });
@@ -191,8 +191,8 @@ describe('customBetween()', () => {
     mqs.customBetween('endret')(query, '2014-09-22T11:50:37.843Z|2015-09-22T11:50:37.843Z');
     assert.deepEqual(query, {
       endret: {
-        $gte: '2014-09-22T11:50:37.843Z',
-        $lt: '2015-09-22T11:50:37.843Z',
+        $gte: new Date('2014-09-22T11:50:37.843Z'),
+        $lt: new Date('2015-09-22T11:50:37.843Z'),
       },
     });
   });
@@ -201,8 +201,8 @@ describe('customBetween()', () => {
     mqs.customBetween('endret')(query, '1411386637843|1442922637843');
     assert.deepEqual(query, {
       endret: {
-        $gte: '2014-09-22T11:50:37.843Z',
-        $lt: '2015-09-22T11:50:37.843Z',
+        $gte: new Date('2014-09-22T11:50:37.843Z'),
+        $lt: new Date('2015-09-22T11:50:37.843Z'),
       },
     });
   });
@@ -211,8 +211,8 @@ describe('customBetween()', () => {
     mqs.customBetween('endret')(query, '1411386637|1442922637');
     assert.deepEqual(query, {
       endret: {
-        $gte: '2014-09-22T11:50:37.000Z',
-        $lt: '2015-09-22T11:50:37.000Z',
+        $gte: new Date('2014-09-22T11:50:37.000Z'),
+        $lt: new Date('2015-09-22T11:50:37.000Z'),
       },
     });
   });
@@ -996,7 +996,7 @@ describe('parse()', () => {
         after: '2014-01-01',
       }), {
         endret: {
-          $gte: '2014-01-01T00:00:00.000Z',
+          $gte: new Date('2014-01-01T00:00:00.000Z'),
         },
       });
     });
@@ -1011,7 +1011,7 @@ describe('parse()', () => {
         before: '2014-01-01',
       }), {
         endret: {
-          $lt: '2014-01-01T00:00:00.000Z',
+          $lt: new Date('2014-01-01T00:00:00.000Z'),
         },
       });
     });
@@ -1026,8 +1026,8 @@ describe('parse()', () => {
         between: '2014-01-01|2015-01-01',
       }), {
         endret: {
-          $gte: '2014-01-01T00:00:00.000Z',
-          $lt: '2015-01-01T00:00:00.000Z',
+          $gte: new Date('2014-01-01T00:00:00.000Z'),
+          $lt: new Date('2015-01-01T00:00:00.000Z'),
         },
       });
     });
